@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.841,=C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\TXTCheck\Unit7.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.851,C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\Unit1.h=C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\TXTCheck\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.848,=C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.851,C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\Unit1.cpp=C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\TXTCheck\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.608,=C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\TXTCheck\sync.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.851,C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\Unit1.dfm=C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\TXTCheck\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.857,=C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\TXTCheck\Unit8.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.789,C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\Project1.cbproj=C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\TXTCheck\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.804,C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\Project1PCH1.h=C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\TXTCheck\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.613,=C:\Users\Elmar Baumann\Documents\Embarcadero\Studio\Projekte\Project1PCH1.h</Transaction>
+  </Transactions>
+</BorlandProject>

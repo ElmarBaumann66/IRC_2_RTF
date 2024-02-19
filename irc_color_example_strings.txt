@@ -1,0 +1,23 @@
+              :offers mugs of hot coffee 1,13"""1,0] 13,1"""1,0] 0,12"""12,0] 0,1"""1,0] 0,4"""4,0] 0,3"""3,0] 8,5"""5,0] 0,2"""2,0] 0,9"""9,0]0,7"""0,7] Help yourself!
+PRIVMSG #Chat :offers mugs of hot tea 0,7:::7,0] 1,13:::1,0] 0,12:::12,0] 1,8:::1,0] 0,1:::1,0] 0,4:::4,0] 0,3:::3,0] 8,5:::5,0] 0,2:::2,0] 0,9:::9,0] Help yourself!
+
+:offers mugs of hot coffee    0,3"""3,0]   <- proof this code
+
+:06,00L12augh 06,00O12ut 06,00L12oud GoldDust, i am now using a clock to count time till i am 60
+:you got that right sweetie L4a4u13G6H 4o4uT L4o4u7D years are flying past L4a4u13G6H 4o4uT L4o4u7D
+:hehe Bronc (should I hold the....) no, YYYYYYY should I. Heyyyyy Broncyyyy! hugssssss
+:hey Txwrangler 6H4u13G7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S
+:hi Nathan 6H4u13G7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S
+:L4a4u13G6H 4o4uT L4o4u7D
+:L4a4u13G6H 4o4uT L4o4u7D
+:L4a4u13G6H 4o4uT L4o4u7D
+:night Maxim 6H4u13G7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S tc dear
+:75L7aughs 5O7ut 5L7oud
+:10(12Aish0410) ive been 
+:1,0You0,4Tube Niall Horan - Nice To Meet Ya (Lyrics)
+: hier warte ich auf dich 𝒘𝒆𝒉𝒂𝒗𝒆𝒊𝒕.𝒔𝒊𝒕𝒆
+
+Raw:                         night Maxim 6H4u13G7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S7S tc dear
+Prepared Line before Parser: night Maxim 06H04u13G07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S07S tc dear
+Dummy after ColorParser:     night Maxim HuGSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS tc dear
+Prepared Line after Styles:  night Maxim HuGSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS tc dear
