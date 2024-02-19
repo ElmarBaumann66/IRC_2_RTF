@@ -50,7 +50,7 @@ TForm1 *Form1;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
- str = new TStringList();               // rtfparser
+ _str = new TStringList();               // rtfparser
 
  DarkBack = TColor(RGB(0,0,64));
  TestRTF->Color = DarkBack;
@@ -60,8 +60,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
  NBL = "<";
  NBR = ">";
- NBL = "•";
- NBL = "•";
+ TBL = "•";
+ TBR = "•";
 }
 
 
@@ -268,22 +268,22 @@ void __fastcall TForm1::UpdateFormatList(int pos, int length)
  int a;
  UnicodeString Start, Dummy, Col, Next;
 
- str->BeginUpdate();
+ _str->BeginUpdate();
 
  try
  {
-  for(a = 0; a < str->Count; a++)
+  for(a = 0; a < _str->Count; a++)
   {
    Application->ProcessMessages();
 
-   Start = str->Strings[a].SubString(0, str->Strings[a].Pos(" ") - 1);
-   Dummy = str->Strings[a].SubString(str->Strings[a].Pos(" ") + 1,str->Strings[a].Length() - str->Strings[a].Pos(" ") + 1);
+   Start = _str->Strings[a].SubString(0, _str->Strings[a].Pos(" ") - 1);
+   Dummy = _str->Strings[a].SubString(_str->Strings[a].Pos(" ") + 1,_str->Strings[a].Length() - _str->Strings[a].Pos(" ") + 1);
    Col = Dummy.SubString(0, Dummy.Pos(" ") - 1);
    Next = Dummy.SubString(Dummy.Pos(" ") + 1,Dummy.Length() - Dummy.Pos(" ") + 1);
 
    if(Start.ToInt() > pos)
    {
-	str->Strings[a] = UnicodeString(Start.ToInt() - length)+" "+Col+" "+Next;
+	_str->Strings[a] = UnicodeString(Start.ToInt() - length)+" "+Col+" "+Next;
 
 	if (Next == "00")
 	{
@@ -291,7 +291,7 @@ void __fastcall TForm1::UpdateFormatList(int pos, int length)
 	}
 	else
 	{
-	 str->Strings[a] = UnicodeString(Start.ToInt() - length)+" "+Col+" "+UnicodeString(Next.ToInt() - length);
+	 _str->Strings[a] = UnicodeString(Start.ToInt() - length)+" "+Col+" "+UnicodeString(Next.ToInt() - length);
 	}
    }
   }
@@ -301,7 +301,7 @@ void __fastcall TForm1::UpdateFormatList(int pos, int length)
   //
  }
 
- str->EndUpdate();
+ _str->EndUpdate();
 }
 
 
@@ -673,7 +673,7 @@ void __fastcall TForm1::NoStyle1Click(TObject *Sender)
 
 void __fastcall TForm1::Info1Click(TObject *Sender)
 {
- MessageBox(0,L"coded by E. Baumann 2021-2024",L"Info",MB_OK);
+ MessageBox(0,L"Git Repository by E. Baumann 2021-2024",L"Info",MB_OK);
 }
 
 
@@ -707,4 +707,9 @@ void __fastcall TForm1::Button3Click(TObject *Sender)
  ResultMemo->Lines->Add("Stripped Clear Text: "+CRM->WrapText(IRCEdit->Text));                 //CRM->FormatContent(IRCEdit->Text));
 }
 
+
+void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
+{
+ delete _str;
+}
 

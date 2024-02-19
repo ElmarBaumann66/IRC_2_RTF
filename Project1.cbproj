@@ -135,8 +135,8 @@
         <VerInfo_Private>true</VerInfo_Private>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <LinkPackageStatics>rtl.lib;vcl.lib;IndySystem.lib;IndyProtocols.lib;IndyCore.lib;vclimg.lib</LinkPackageStatics>
-        <VerInfo_Keys>CompanyName=Baumann Software;FileDescription=$(MSBuildProjectName);FileVersion=1.0.1.432;InternalName=irctools;LegalCopyright=2020;LegalTrademarks=;OriginalFilename=;ProgramID=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;PrivateBuild=</VerInfo_Keys>
-        <VerInfo_Build>432</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Baumann Software;FileDescription=$(MSBuildProjectName);FileVersion=1.0.1.433;InternalName=irctools;LegalCopyright=2020;LegalTrademarks=;OriginalFilename=;ProgramID=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;PrivateBuild=</VerInfo_Keys>
+        <VerInfo_Build>433</VerInfo_Build>
         <VerInfo_Release>1</VerInfo_Release>
         <Icon_MainIcon>Project1_Icon.ico</Icon_MainIcon>
         <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)$(CC_SUFFIX)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>

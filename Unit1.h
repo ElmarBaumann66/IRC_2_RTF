@@ -93,8 +93,10 @@ __published:	// Von der IDE verwaltete Komponenten
 	void __fastcall Info1Click(TObject *Sender);
 	void __fastcall Font1Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 
 private:	// Benutzer-Deklarationen
+
 public:		// Benutzer-Deklarationen
 	__fastcall TForm1(TComponent* Owner);
 	bool colortype;
@@ -104,13 +106,13 @@ public:		// Benutzer-Deklarationen
 	UnicodeString TBL;
 	UnicodeString TBR;
 
-        TColor DarkBack;
+	TColor DarkBack;
 
-	TStrings *str;               // rtfparser
+	TStrings *_str;               // rtfparser
 
 	void __fastcall UpdateFormatList(int pos, int length);
 
-        bool isASCII(const char Letter);
+	bool isASCII(const char Letter);
 
 	UnicodeString __fastcall CheckChar(UnicodeString Input);
 	UnicodeString __fastcall KeyDecodeBinary(UnicodeString AString);

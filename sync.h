@@ -48,7 +48,7 @@ class TRTFLine : public TIdSync
   private:
 	UnicodeString Line;
 	TColorParser *Cp;              // incoming Messages ColorParser
-	unsigned __int64 offset;       //changed from   int offset 10.02.2019
+	unsigned int offset;
 
   public:
 
@@ -86,9 +86,9 @@ class TRTFLine : public TIdSync
 		strikeout = false;
 		NoStyle = false;
 
-		Form1->str->BeginUpdate();
-		Form1->str->Clear();
-		Form1->str->EndUpdate();
+		Form1->_str->BeginUpdate();
+		Form1->_str->Clear();
+		Form1->_str->EndUpdate();
 
 		Form1->TestRTF->ClearSelection();
 		len = Dummy.Length();
@@ -129,11 +129,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("\x0F") > 0)
 		   {
-			Form1->str->Add("1 clTerminate "+UnicodeString(Dummy.Pos("\x0F")));
+			Form1->_str->Add("1 clTerminate "+UnicodeString(Dummy.Pos("\x0F")));
 		   }
 		   else
 		   {
-			Form1->str->Add("1 clTerminate 00");
+			Form1->_str->Add("1 clTerminate 00");
 		   }
 		  }
 		  else
@@ -143,11 +143,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("\x0F") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clTerminate "+UnicodeString(Dummy.Pos("\x0F")));
+			Form1->_str->Add(UnicodeString(a)+" clTerminate "+UnicodeString(Dummy.Pos("\x0F")));
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clTerminate 00");
+			Form1->_str->Add(UnicodeString(a)+" clTerminate 00");
 		   }
 
 		   a = a - 1;
@@ -184,11 +184,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("\x02") > 0)
 		   {
-			Form1->str->Add("1 bold "+IntToStr(Dummy.Pos("\x02")));
+			Form1->_str->Add("1 bold "+IntToStr(Dummy.Pos("\x02")));
 		   }
 		   else
 		   {
-			Form1->str->Add("1 bold 00");
+			Form1->_str->Add("1 bold 00");
 		   }
 		  }
 		  else
@@ -198,11 +198,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("\x02") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" bold "+IntToStr(Dummy.Pos("\x02")));
+			Form1->_str->Add(UnicodeString(a)+" bold "+IntToStr(Dummy.Pos("\x02")));
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" bold 00");
+			Form1->_str->Add(UnicodeString(a)+" bold 00");
 		   }
 
 		   a = a - 1;
@@ -239,11 +239,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("\x1F") > 0)
 		   {
-			Form1->str->Add("1 clUnderline "+UnicodeString(Dummy.Pos("\x1F")));
+			Form1->_str->Add("1 clUnderline "+UnicodeString(Dummy.Pos("\x1F")));
 		   }
 		   else
 		   {
-			Form1->str->Add("1 clUnderline 00");
+			Form1->_str->Add("1 clUnderline 00");
 		   }
 		  }
 		  else
@@ -253,11 +253,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("\x1F") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clUnderline "+UnicodeString(Dummy.Pos("\x1F")));
+			Form1->_str->Add(UnicodeString(a)+" clUnderline "+UnicodeString(Dummy.Pos("\x1F")));
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clUnderline 00");
+			Form1->_str->Add(UnicodeString(a)+" clUnderline 00");
 		   }
 
 		   a = a - 1;
@@ -294,11 +294,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("\x1E") > 0)
 		   {
-			Form1->str->Add("1 clStrikeout "+UnicodeString(Dummy.Pos("\x1E")));
+			Form1->_str->Add("1 clStrikeout "+UnicodeString(Dummy.Pos("\x1E")));
 		   }
 		   else
 		   {
-			Form1->str->Add("1 clStrikeout 00");
+			Form1->_str->Add("1 clStrikeout 00");
 		   }
 		  }
 		  else
@@ -308,11 +308,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("\x1E") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clStrikeout "+UnicodeString(Dummy.Pos("\x1E")));
+			Form1->_str->Add(UnicodeString(a)+" clStrikeout "+UnicodeString(Dummy.Pos("\x1E")));
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clStrikeout 00");
+			Form1->_str->Add(UnicodeString(a)+" clStrikeout 00");
 		   }
 
 		   a = a - 1;
@@ -349,11 +349,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("\x1D") > 0)
 		   {
-			Form1->str->Add("1 clItalic "+UnicodeString(Dummy.Pos("\x1D")));
+			Form1->_str->Add("1 clItalic "+UnicodeString(Dummy.Pos("\x1D")));
 		   }
 		   else
 		   {
-			Form1->str->Add("1 clItalic 00");
+			Form1->_str->Add("1 clItalic 00");
 		   }
 		  }
 		  else
@@ -363,11 +363,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("\x1D") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clItalic "+UnicodeString(Dummy.Pos("\x1D")));
+			Form1->_str->Add(UnicodeString(a)+" clItalic "+UnicodeString(Dummy.Pos("\x1D")));
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clItalic 00");
+			Form1->_str->Add(UnicodeString(a)+" clItalic 00");
 		   }
 
 		   a = a - 1;
@@ -384,11 +384,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("00") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clWhite "+UnicodeString(Dummy.Pos("00")-1));
+			Form1->_str->Add(UnicodeString(1)+" clWhite "+UnicodeString(Dummy.Pos("00")-1));
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clWhite 00");
+			Form1->_str->Add(UnicodeString(1)+" clWhite 00");
 		   }
 		  }
 		  else
@@ -398,11 +398,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("00") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clWhite "+UnicodeString(Dummy.Pos("00")-1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clWhite "+UnicodeString(Dummy.Pos("00")-1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clWhite 00");
+			Form1->_str->Add(UnicodeString(a)+" clWhite 00");
 		   }
 
 		   a = a - 3;
@@ -419,11 +419,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("01") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clBlack "+UnicodeString(Dummy.Pos("01")-1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clBlack "+UnicodeString(Dummy.Pos("01")-1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clBlack 00");
+			Form1->_str->Add(UnicodeString(1)+" clBlack 00");
 		   }
 		  }
 		  else
@@ -433,11 +433,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("01") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clBlack "+UnicodeString(Dummy.Pos("01")-1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clBlack "+UnicodeString(Dummy.Pos("01")-1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clBlack 00");
+			Form1->_str->Add(UnicodeString(a)+" clBlack 00");
 		   }
 
 		   a = a - 3;
@@ -454,11 +454,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("02") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clBlue "+UnicodeString(Dummy.Pos("02") - 1)); // add nextpos
+			Form1->_str->Add(UnicodeString(1)+" clBlue "+UnicodeString(Dummy.Pos("02") - 1)); // add nextpos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clBlue 00");
+			Form1->_str->Add(UnicodeString(1)+" clBlue 00");
 		   }
 		  }
 		  else
@@ -468,11 +468,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("02") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clBlue "+UnicodeString(Dummy.Pos("02") - 1)); // add nextpos
+			Form1->_str->Add(UnicodeString(a)+" clBlue "+UnicodeString(Dummy.Pos("02") - 1)); // add nextpos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clBlue 00");
+			Form1->_str->Add(UnicodeString(a)+" clBlue 00");
 		   }
 
 		   a = a - 3;
@@ -489,11 +489,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("03") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clGreen "+UnicodeString(Dummy.Pos("03") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clGreen "+UnicodeString(Dummy.Pos("03") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clGreen 00");
+			Form1->_str->Add(UnicodeString(1)+" clGreen 00");
 		   }
 		  }
 		  else
@@ -503,11 +503,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("03") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clGreen "+UnicodeString(Dummy.Pos("03") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clGreen "+UnicodeString(Dummy.Pos("03") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clGreen 00");
+			Form1->_str->Add(UnicodeString(a)+" clGreen 00");
 		   }
 
 		   a = a - 3;
@@ -524,11 +524,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("04") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clRed "+UnicodeString(Dummy.Pos("04") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clRed "+UnicodeString(Dummy.Pos("04") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clRed 00");
+			Form1->_str->Add(UnicodeString(1)+" clRed 00");
 		   }
 		  }
 		  else
@@ -538,11 +538,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("04") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clRed "+UnicodeString(Dummy.Pos("04") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clRed "+UnicodeString(Dummy.Pos("04") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clRed 00");
+			Form1->_str->Add(UnicodeString(a)+" clRed 00");
 		   }
 
 		   a = a - 3;
@@ -559,11 +559,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("05") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clBrown "+UnicodeString(Dummy.Pos("05") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clBrown "+UnicodeString(Dummy.Pos("05") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clBrown 00");
+			Form1->_str->Add(UnicodeString(1)+" clBrown 00");
 		   }
 		  }
 		  else
@@ -573,11 +573,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("05") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clBrown "+UnicodeString(Dummy.Pos("05") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clBrown "+UnicodeString(Dummy.Pos("05") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clBrown 00");
+			Form1->_str->Add(UnicodeString(a)+" clBrown 00");
 		   }
 
 		   a = a - 3;
@@ -594,11 +594,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("06") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clPurple "+UnicodeString(Dummy.Pos("06") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clPurple "+UnicodeString(Dummy.Pos("06") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clPurple 00");
+			Form1->_str->Add(UnicodeString(1)+" clPurple 00");
 		   }
 		  }
 		  else
@@ -608,11 +608,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("06") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clPurple "+UnicodeString(Dummy.Pos("06") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clPurple "+UnicodeString(Dummy.Pos("06") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clPurple 00");
+			Form1->_str->Add(UnicodeString(a)+" clPurple 00");
 		   }
 
 		   a = a - 3;
@@ -629,11 +629,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("07") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clOrange "+UnicodeString(Dummy.Pos("07") -1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clOrange "+UnicodeString(Dummy.Pos("07") -1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clOrange 00");
+			Form1->_str->Add(UnicodeString(1)+" clOrange 00");
 		   }
 		  }
 		  else
@@ -643,11 +643,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("07") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clOrange "+UnicodeString(Dummy.Pos("07") -1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clOrange "+UnicodeString(Dummy.Pos("07") -1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clOrange 00");
+			Form1->_str->Add(UnicodeString(a)+" clOrange 00");
 		   }
 
 		   a = a - 3;
@@ -664,11 +664,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("08") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clYellow "+UnicodeString(Dummy.Pos("08") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clYellow "+UnicodeString(Dummy.Pos("08") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clYellow 00");
+			Form1->_str->Add(UnicodeString(1)+" clYellow 00");
 		   }
 		  }
 		  else
@@ -678,11 +678,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("08") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clYellow "+UnicodeString(Dummy.Pos("08") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clYellow "+UnicodeString(Dummy.Pos("08") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clYellow 00");
+			Form1->_str->Add(UnicodeString(a)+" clYellow 00");
 		   }
 
 		   a = a - 3;
@@ -699,11 +699,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("09") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clLightGreen "+UnicodeString(Dummy.Pos("09") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clLightGreen "+UnicodeString(Dummy.Pos("09") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clLightGreen 00");
+			Form1->_str->Add(UnicodeString(1)+" clLightGreen 00");
 		   }
 		  }
 		  else
@@ -713,11 +713,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("09") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clLightGreen "+UnicodeString(Dummy.Pos("09") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clLightGreen "+UnicodeString(Dummy.Pos("09") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clLightGreen 00");
+			Form1->_str->Add(UnicodeString(a)+" clLightGreen 00");
 		   }
 
 		   a = a - 3;
@@ -734,11 +734,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("10") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clTeal "+UnicodeString(Dummy.Pos("10") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clTeal "+UnicodeString(Dummy.Pos("10") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clTeal 00");
+			Form1->_str->Add(UnicodeString(1)+" clTeal 00");
 		   }
 		  }
 		  else
@@ -748,11 +748,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("10") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clTeal "+UnicodeString(Dummy.Pos("10") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clTeal "+UnicodeString(Dummy.Pos("10") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clTeal 00");
+			Form1->_str->Add(UnicodeString(a)+" clTeal 00");
 		   }
 
 		   a = a - 3;
@@ -769,11 +769,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("11") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clAqua "+UnicodeString(Dummy.Pos("11") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clAqua "+UnicodeString(Dummy.Pos("11") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clAqua 00");
+			Form1->_str->Add(UnicodeString(1)+" clAqua 00");
 		   }
 		  }
 		  else
@@ -783,11 +783,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("11") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clAqua "+UnicodeString(Dummy.Pos("11") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clAqua "+UnicodeString(Dummy.Pos("11") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clAqua 00");
+			Form1->_str->Add(UnicodeString(a)+" clAqua 00");
 		   }
 
 		   a = a - 3;
@@ -804,11 +804,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("12") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clLightblue "+UnicodeString(Dummy.Pos("12") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clLightblue "+UnicodeString(Dummy.Pos("12") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clLightblue 00");
+			Form1->_str->Add(UnicodeString(1)+" clLightblue 00");
 		   }
 		  }
 		  else
@@ -818,11 +818,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("12") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clLightblue "+UnicodeString(Dummy.Pos("12") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clLightblue "+UnicodeString(Dummy.Pos("12") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clLightblue 00");
+			Form1->_str->Add(UnicodeString(a)+" clLightblue 00");
 		   }
 
 		   a = a - 3;
@@ -839,11 +839,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("13") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clPink "+UnicodeString(Dummy.Pos("13") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clPink "+UnicodeString(Dummy.Pos("13") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clPink 00");
+			Form1->_str->Add(UnicodeString(1)+" clPink 00");
 		   }
 		  }
 		  else
@@ -853,11 +853,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("13") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clPink "+UnicodeString(Dummy.Pos("13") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clPink "+UnicodeString(Dummy.Pos("13") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clPink 00");
+			Form1->_str->Add(UnicodeString(a)+" clPink 00");
 		   }
 
 		   a = a - 3;
@@ -874,11 +874,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("14") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clGrey "+UnicodeString(Dummy.Pos("14") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clGrey "+UnicodeString(Dummy.Pos("14") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clGrey 00");
+			Form1->_str->Add(UnicodeString(1)+" clGrey 00");
 		   }
 		  }
 		  else
@@ -888,11 +888,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("14") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clGrey "+UnicodeString(Dummy.Pos("14") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clGrey "+UnicodeString(Dummy.Pos("14") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clGrey 00");
+			Form1->_str->Add(UnicodeString(a)+" clGrey 00");
 		   }
 
 		   a = a - 3;
@@ -909,11 +909,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("15") > 0)
 		   {
-			Form1->str->Add(UnicodeString(1)+" clLightgrey "+UnicodeString(Dummy.Pos("15") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(1)+" clLightgrey "+UnicodeString(Dummy.Pos("15") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(1)+" clLightgrey 00");
+			Form1->_str->Add(UnicodeString(1)+" clLightgrey 00");
 		   }
 		  }
 		  else
@@ -923,11 +923,11 @@ class TRTFLine : public TIdSync
 
 		   if(Dummy.Pos("15") > 0)
 		   {
-			Form1->str->Add(UnicodeString(a)+" clLightgrey "+UnicodeString(Dummy.Pos("15") - 1)); // add next pos
+			Form1->_str->Add(UnicodeString(a)+" clLightgrey "+UnicodeString(Dummy.Pos("15") - 1)); // add next pos
 		   }
 		   else
 		   {
-			Form1->str->Add(UnicodeString(a)+" clLightgrey 00");
+			Form1->_str->Add(UnicodeString(a)+" clLightgrey 00");
 		   }
 
 		   a = a - 3;
@@ -977,11 +977,11 @@ class TRTFLine : public TIdSync
 
 			if(Dummy.Pos("\x03") > 0)
 			{
-			 Form1->str->Add("1 clNoColor "+UnicodeString(Dummy.Pos("\x03")));
+			 Form1->_str->Add("1 clNoColor "+UnicodeString(Dummy.Pos("\x03")));
 			}
 			else
 			{
-			 Form1->str->Add("1 clNoColor 00"); // add end pos
+			 Form1->_str->Add("1 clNoColor 00"); // add end pos
 			}
 		   }
 		   else
@@ -991,11 +991,11 @@ class TRTFLine : public TIdSync
 
 			if(Dummy.Pos("\x03") > 0)
 			{
-			 Form1->str->Add(UnicodeString(a)+" clNoColor "+UnicodeString(Dummy.Pos("\x03")));
+			 Form1->_str->Add(UnicodeString(a)+" clNoColor "+UnicodeString(Dummy.Pos("\x03")));
 			}
 			else
 			{
-			 Form1->str->Add(UnicodeString(a) + " clNoColor 00"); // add end pos
+			 Form1->_str->Add(UnicodeString(a) + " clNoColor 00"); // add end pos
 			}
 
 			a = a - 1;
@@ -1018,7 +1018,7 @@ class TRTFLine : public TIdSync
 	   Form1->ResultMemo->Lines->Add(" ");
 	   Form1->ResultMemo->Lines->Add("Format List:");
 	   Form1->ResultMemo->Lines->Add(" ");
-	   Form1->ResultMemo->Lines->AddStrings(Form1->str);
+	   Form1->ResultMemo->Lines->AddStrings(Form1->_str);
 
 	   if(Dummy.Length() > 0)
 	   {
@@ -1077,15 +1077,15 @@ class TRTFLine : public TIdSync
 
 	   try
 	   {
-		for(a = 0; a < Form1->str->Count; a++)
+		for(a = 0; a < Form1->_str->Count; a++)
 		{
 		 Start = "";
 		 Dummy = "";
 		 Col = "";
 		 Next = "";
 
-		 Start = Form1->str->Strings[a].SubString(0, Form1->str->Strings[a].Pos(" ") - 1);
-		 Dummy = Form1->str->Strings[a].SubString(Form1->str->Strings[a].Pos(" ") + 1,Form1->str->Strings[a].Length() - Form1->str->Strings[a].Pos(" ") + 1);
+		 Start = Form1->_str->Strings[a].SubString(0, Form1->_str->Strings[a].Pos(" ") - 1);
+		 Dummy = Form1->_str->Strings[a].SubString(Form1->_str->Strings[a].Pos(" ") + 1,Form1->_str->Strings[a].Length() - Form1->_str->Strings[a].Pos(" ") + 1);
 		 Col = Dummy.SubString(0, Dummy.Pos(" ") - 1);
 		 Next = Dummy.SubString(Dummy.Pos(" ") + 1,Dummy.Length() - Dummy.Pos(" ") + 1);
 
@@ -1343,7 +1343,7 @@ class TRTFLine : public TIdSync
 	   }
 	   catch(Exception &exception)
 	   {
-		//
+		// Not important in this Version
 	   }
 
 	   Form1->TestRTF->ClearSelection();

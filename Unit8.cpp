@@ -501,8 +501,4 @@ UnicodeString __fastcall TColorRemover::WrapText(UnicodeString Source)
  return FInput;
 }
 
-UnicodeString __fastcall TColorRemover::ReplaceAlphabet(UnicodeString Source,int Mode)
-{
 
- return Source;
-}
